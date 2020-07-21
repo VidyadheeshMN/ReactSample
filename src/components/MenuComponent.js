@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Media } from 'reactstrap';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody,
+import { Card, CardImg, CardDeck, CardImgOverlay, CardText, CardBody,
   CardTitle } from 'reactstrap';
-
+import DishDetailComponent from './DishdetailComponent'
   class Menu extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            selectedDish: null
+            selectedDish: ""
         }
     }
 
@@ -20,13 +20,16 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody,
     renderDish(dish) {
         if (dish != null)
             return(
+              <CardDeck>
                 <Card>
                     <CardImg top src={dish.image} alt={dish.name} />
-                    <CardBody>
-                      <CardTitle>{dish.name}</CardTitle>
-                      <CardText>{dish.description}</CardText>
-                    </CardBody>
+                    <CardTitle>{dish.name}</CardTitle>
+                    <CardText>{dish.description}</CardText>
                 </Card>
+                <Card>
+                  <DishDetailComponent comment1 = {this.state.selectedDish.comments}/>
+                </Card>
+                </CardDeck>
             );
         else
             return(
@@ -55,11 +58,11 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody,
                     {menu}
                 </div>
                 <div className="row">
-                  <div  className="col-12 col-md-5 m-1">
+                  <div  className="col-12 col-md-10 m-1">
                     {this.renderDish(this.state.selectedDish)}
                   </div>
                 </div>
-            </div>
+            </div>      
         );
     }
 }
