@@ -28,7 +28,7 @@ class Main extends Component {
 
   render() {
 
-    const HomePage = () => {
+    const HomePage = ({match}) => {
       return(
         <Home dish={this.props.dishes.filter((dish) => dish.featured)[0]}
         promotions={this.props.promotions.filter((promo) => promo.featured)[0]}
