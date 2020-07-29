@@ -91,7 +91,6 @@ class Contact extends Component {
                                                 maxLength: 'Must be 15 characters or less'
                                             }}
                                             />
-                                            
                                         </Col>
                                     </Row>
                                     <Row className = "form-group">

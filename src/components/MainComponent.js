@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import Home from './HomeComponent';
 import Menu from './MenuComponent';
 import Contact from './ContactComponent';
-import DishDetail from './DishdetailComponent';
 import About from './AboutComponent'
 import Header from './HeaderComponent'
 import Footer from './FooterComponent'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
+import CommentForm from './DishdetailComponent';
+import DishDetail from './DishdetailComponent';
 
 
 const mapStateToProps = (state) => {
