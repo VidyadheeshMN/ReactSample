@@ -54,6 +54,7 @@ class Main extends Component {
             <Route exact path="/contactus" component={Contact}/>
             <Route exact path="/aboutus" component={() => <About leaders={this.props.leaders}/>}/>
             <Route default path="/home"/>
+            <Redirect to="/home">
           </Switch>
         <Footer />
       </div>
