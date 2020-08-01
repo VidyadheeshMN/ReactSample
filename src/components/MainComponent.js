@@ -7,7 +7,6 @@ import Header from './HeaderComponent'
 import Footer from './FooterComponent'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-import CommentForm from './DishdetailComponent';
 import DishDetail from './DishdetailComponent';
 
 
