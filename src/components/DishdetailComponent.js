@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Card, CardImg, CardText, CardBody, CardTitle, BreadcrumbItem, Breadcrumb, Button, Row, Col, Modal, ModalHeader, ModalBody, Label, Input, Form } from 'reactstrap'
+import {Card, CardImg, CardText, CardBody, CardTitle, BreadcrumbItem, Breadcrumb, Button, Row, Col, Modal, ModalHeader, ModalBody, Label} from 'reactstrap'
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
@@ -24,20 +24,23 @@ class CommentForm extends Component {
     }
 
     handleSubmit(values) {
-        console.log("Current State is: " + JSON.stringify(values))
+        console.log("Current State is: " + JSON.stringify(values.message))
         alert("Current State is: " + JSON.stringify(values))
+        this.setState ({
+            isModalOpen: !this.state.isModalOpen
+        });
     }
 
    render(){
     return(
         <>
-            <Button className="bg-white text-dark" onClick={this.toggleModal}><i className="fa fa-pencil fa-lg" data-dismiss="modal"></i>{' '}Submit Comment</Button>
+            <Button className="bg-white text-dark" onClick={this.toggleModal}><i className="fa fa-pencil fa-lg"></i>{' '}Submit Comment</Button>
             <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                 <ModalHeader toggle={this.toggleModal}>
                     Submit Comment
                 </ModalHeader>
                 <ModalBody>
-                    <LocalForm onSubmit = {(values) => this.handleSubmit(values)} data-dismiss="modal">
+                    <LocalForm onSubmit = {(value) => this.handleSubmit(value)}>
                         <Row className="form-group">
                             <Label htmlFor="rating" md={4}>Rating</Label>
                             <Col md={12}>
