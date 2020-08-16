@@ -5,7 +5,7 @@ import Contact from './ContactComponent';
 import About from './AboutComponent'
 import Header from './HeaderComponent'
 import Footer from './FooterComponent'
-import { Switch, Route, withRouter, Redirect } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import DishDetail from './DishdetailComponent';
 
@@ -21,10 +21,6 @@ const mapStateToProps = (state) => {
 }
 
 class Main extends Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   render() {
 
@@ -54,7 +50,6 @@ class Main extends Component {
             <Route exact path="/contactus" component={Contact}/>
             <Route exact path="/aboutus" component={() => <About leaders={this.props.leaders}/>}/>
             <Route default path="/home"/>
-            <Redirect to="/home">
           </Switch>
         <Footer />
       </div>
